@@ -37,13 +37,19 @@ else:
 
 random.shuffle(lstOfThings)
 
-if sys.argv[1] in ["-c", "-C"]:
-    index=int(input("ENTER NUMBER BETWEEN 1 to "+str(len(lstOfThings))+" : "))
-    index -= 1
-else:
-    index = random.randrange(len(lstOfThings))
+while True:
+    if sys.argv[1] in ["-c", "-C"]:
+        index=int(input("ENTER NUMBER BETWEEN 1 to "+str(len(lstOfThings))+" : "))
+        index -= 1
+    else:
+        index = random.randrange(len(lstOfThings))
 
-print("Decision made is: ",lstOfThings[index])
+    print("Decision made is: ",lstOfThings[index])
+
+    if input("Would you like to choose again? (y/n) : ")[0].lower() == "n":
+        break
+    
+    
 
 
 
